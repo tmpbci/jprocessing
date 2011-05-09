@@ -1,0 +1,59 @@
+jprocessing by Samneurohack
+samneurohack@gmail.com
+http://www.tmplab.org/wiki/index.php/Brain_Computer_Interface
+
+Source code of "Mind Processing", a tmpbci installation at Macval (museum of contemporary art in France) on May 22nd 2011.
+
+jprocessing use Lighted London Hackspace DMX webserver (https://github.com/Jonty/Lighted). Plug the DMX lights to the computer that host the DMX interface (Arduino shield or enttec USB PRO) and run lighted on this computer. This means that Lighted webserver and jprocessing running computers can be the same, somewhere locally or anywhere in the world through Internet. Lighted is started automatically by jprocessing but if want to run on a different computer *copy* lighted directory (in jprocessing/resources/) and run it manually : python lighted.py. 
+
+You can control many devices at once, just fill the first color DMX channel of all devices in the appropriate field. If you have LED A colors starting at channel 3 and LED B colors at channel 12 fill with 3,12
+
+jprocessing preferences control local lighted only, you want to edit lighted.conf if run on another computer.
+
+
+INSTALL :
+
+Requirements : python, Rebol, virtual serial port driver for enttec USB PRO and ThinkGearconnector and London hackspace "lighted". 
+
+enttec USB PRO : Download and install virtual serial port from FTDI website :
+http://www.ftdichip.com/Drivers/VCP.htm
+
+Install Rebol view 2.7.x, *note that rebol 3 is not supported* :
+http://www.rebol.com/download-view.html
+OS X: you may want to copy rebol in your PATH i.e to /usr/bin/
+
+Download and Install a serial access for python if needed like pyserial :
+In terminal type :
+sudo easy_install pyserial
+
+Install Thinkgear Connector program form Mindset developper tools :
+http://store.neurosky.com/collections/development
+
+The Mindset headset must be paired via bluetooth utility. The correct Mindset bluetooth serial port must be configured in Thinkgear connector (usually in OS X: /dev/tty.Mindset-DevB).
+
+
+USAGE:
+
+OS X: 	
+		switch on and wear Mindset 
+		start Thinkgear connector (TGC)
+		The headset should connect to TGC
+		start jresources/Pd/jprocessing.pd
+		start terminal 
+		cd the jprocessing directory (change directory)
+		type rebol jprocessing.r
+		clic
+		
+Windows:
+		switch on and wear Mindset
+		start Thinkgear connector (TGC)
+		connect TGC to headset
+		Doubleclick on jprocessing.r
+	
+
+
+CONFIGURATION:
+
+To configure jprocessing fill the appropriate field in jprocessing user interface or edit lighted.conf if lighted isn't run on the same computer.
+
+
